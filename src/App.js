@@ -1,8 +1,18 @@
 import React from 'react'
+import MovieList from './components/MovieList';
+import NavBar from './components/NavBar';
+import { MoviesProvider } from './contexts/MoviesContext';
+import { UserProvider } from './contexts/UserContext'
 
 function App() {
+
   return (
-    <h1>Works!</h1>
+    <UserProvider>
+      <MoviesProvider>
+        <NavBar/>
+        <MovieList/>
+      </MoviesProvider>
+    </UserProvider>
     );
 }
 
